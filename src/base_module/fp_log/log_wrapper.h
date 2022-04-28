@@ -1,6 +1,6 @@
 #ifndef LOG_WRAPPER_H_
 #define LOG_WRAPPER_H_
-#include "../common/global_common_namespace_def.h"
+#include "../../common/global_common_namespace_def.h"
 #include <cstdio>
 #include <string>
 #include <memory>
@@ -20,13 +20,13 @@ BASE_CORE_BEGIN
 class FPLog {
  public:
   enum class Level {
-    NONE,
-    DEBUG,
-    INFO,
-    WRAN,
-    ERROR,
-    PANIC,
-    ALL,
+    LEVEL_NONE,
+    LEVEL_DEBUG,
+    LEVEL_INFO,
+    LEVEL_WRAN,
+    LEVEL_ERROR,
+    LEVEL_PANIC,
+    LEVEL_ALL,
   };
   static FPLog* Instance();
   static bool Destroy();
