@@ -1,9 +1,9 @@
-/*** 
+/***
  * @Author: near you
  * @Date: 2022-05-01 23:04:49
  * @LastEditTime: 2022-05-04 22:25:29
  * @LastEditors: near you
- * @Description: 
+ * @Description:
  * @FilePath: \fp_base_core\src\common\global_common_namespace_def.h
  * @Copyright(c) 2022-present, NearU Person <zynearu@gmail.com>
  */

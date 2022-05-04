@@ -1,8 +1,8 @@
 #include "fp_log.h"
 #include "log_wrapper.h"
 
-namespace fp{
-namespace log{
+namespace fp {
+namespace log {
 
 const int DEFAULT_SINGLE_FILE_MAX_SIZE = 1024 * 1024 * 10;
 const int DEFAULT_FILE_MAX_COUNT = 5;
@@ -53,7 +53,7 @@ void FLog(Level level, const char* format, ...) {
 }
 
 void FLogDebug(const char* format, ...) {
-  
+
 }
 
 void FLogInfo(const char* format, ...) {
@@ -76,7 +76,7 @@ void FLogAll(const char* format, ...) {
 
 }
 
-void GetCurrentLogPath(char* path, int &length) {
+void GetCurrentLogPath(char* path, int& length) {
 
 }
 

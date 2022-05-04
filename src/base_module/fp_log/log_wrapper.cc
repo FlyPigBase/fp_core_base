@@ -12,8 +12,8 @@ FPLog::FPLog()
   Log(__FILE__, __LINE__, Level::LEVEL_INFO, "fp log create");
 }
 
-FPLog::~FPLog(){
-    
+FPLog::~FPLog() {
+
 }
 
 FPLog* FPLog::Instance() {
@@ -21,7 +21,7 @@ FPLog* FPLog::Instance() {
   return &fp_log;
 }
 bool FPLog::Destroy() {
-  if(!logger_){
+  if (!logger_) {
 
   }
   return true;

@@ -1,9 +1,9 @@
-/*** 
+/***
  * @Author: nearu
  * @Date: 2022-05-01 23:04:49
  * @LastEditTime: 2022-05-04 22:58:56
  * @LastEditors: near you
- * @Description: 
+ * @Description:
  * @FilePath: \fp_base_core\src\base_module\fp_log\log_wrapper.h
  * @Copyright(c) 2022-present, NearU Person <zynearu@gmail.com>
  */

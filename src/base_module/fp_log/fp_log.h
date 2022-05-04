@@ -1,4 +1,4 @@
-/*** 
+/***
  * @Author: near you
  * @Date: 2022-05-02 22:34:28
  * @LastEditTime: 2022-05-04 22:31:47
@@ -30,8 +30,8 @@ enum class Level {
   LEVEL_ALL,
 };
 
-/*** 
- * @description: 
+/***
+ * @description:
  * @param {*}
  * @return {*}
  * @Author: near you
@@ -39,8 +39,8 @@ enum class Level {
  */
 extern void StartFlog();
 
-/*** 
- * @description: 
+/***
+ * @description:
  * @param {*}
  * @return {*}
  * @Author: near you
@@ -48,8 +48,8 @@ extern void StartFlog();
  */
 extern void StopFlog();
 
-/*** 
- * @description: 
+/***
+ * @description:
  * @param {*}
  * @return {*}
  * @Author: near you
@@ -57,7 +57,7 @@ extern void StopFlog();
  */
 extern void CloseFlog();
 
-/*** 
+/***
  * @description: whether out put log to local console, default is not out put
  * @param {bool} out_put
  * @return {*}
@@ -66,9 +66,9 @@ extern void CloseFlog();
  */
 extern void SetOutputConsole(bool out_put);
 
-/*** 
- * @description: fp log default is not thread safe,should yourself assure fp only 
- * used in one thread,if you want to use multi thread please set LogThreadSafeModel 
+/***
+ * @description: fp log default is not thread safe,should yourself assure fp only
+ * used in one thread,if you want to use multi thread please set LogThreadSafeModel
  * is LOG_THREAD_SAFE
  * @param {LogThreadSafeModel} model
  * @return {*}
@@ -77,7 +77,7 @@ extern void SetOutputConsole(bool out_put);
  */
 extern void SetLogThreadSafeModel(LogThreadSafeModel model);
 
-/*** 
+/***
  * @description: fp log default is single file and max size is 10M,named fp_log.txt,
  * you also can create multi files rotaing write log
  * @param {LogFileModel} model
@@ -87,8 +87,8 @@ extern void SetLogThreadSafeModel(LogThreadSafeModel model);
  */
 extern void SetLogFileModel(LogFileModel model);
 
-/*** 
- * @description: 
+/***
+ * @description:
  * @param {uint64_t} max_size
  * @return {*}
  * @Author: near you
@@ -96,8 +96,8 @@ extern void SetLogFileModel(LogFileModel model);
  */
 extern void SetLogFileMaxSizeByte(int max_size);
 
-/*** 
- * @description: 
+/***
+ * @description:
  * @param {uint8_t} max_count
  * @return {*}
  * @Author: near you
@@ -105,8 +105,8 @@ extern void SetLogFileMaxSizeByte(int max_size);
  */
 extern void SetLogFileMaxCount(int max_count);
 
-/*** 
- * @description: 
+/***
+ * @description:
  * @param {char*} path
  * @param {int} path_length
  * @return {*}
@@ -115,8 +115,8 @@ extern void SetLogFileMaxCount(int max_count);
  */
 extern void SetFLogPath(const char* path, int path_length);
 
-/*** 
- * @description: 
+/***
+ * @description:
  * @param {char*} path
  * @param {int} path_length
  * @return {*}
@@ -125,8 +125,8 @@ extern void SetFLogPath(const char* path, int path_length);
  */
 extern void SetFLogFileName(const char* path, int path_length);
 
-/*** 
- * @description: 
+/***
+ * @description:
  * @param {Level} level
  * @param {char*} format
  * @return {*}
@@ -135,8 +135,8 @@ extern void SetFLogFileName(const char* path, int path_length);
  */
 extern void FLog(Level level, const char* format, ...);
 
-/*** 
- * @description: 
+/***
+ * @description:
  * @param {char*} format
  * @return {*}
  * @Author: near you
@@ -144,8 +144,8 @@ extern void FLog(Level level, const char* format, ...);
  */
 extern void FLogDebug(const char* format, ...);
 
-/*** 
- * @description: 
+/***
+ * @description:
  * @param {char*} format
  * @return {*}
  * @Author: near you
@@ -153,8 +153,8 @@ extern void FLogDebug(const char* format, ...);
  */
 extern void FLogInfo(const char* format, ...);
 
-/*** 
- * @description: 
+/***
+ * @description:
  * @param {char*} format
  * @return {*}
  * @Author: near you
@@ -162,8 +162,8 @@ extern void FLogInfo(const char* format, ...);
  */
 extern void FLogWarn(const char* format, ...);
 
-/*** 
- * @description: 
+/***
+ * @description:
  * @param {char*} format
  * @return {*}
  * @Author: near you
@@ -171,8 +171,8 @@ extern void FLogWarn(const char* format, ...);
  */
 extern void FLogError(const char* format, ...);
 
-/*** 
- * @description: 
+/***
+ * @description:
  * @param {char*} format
  * @return {*}
  * @Author: near you
@@ -180,8 +180,8 @@ extern void FLogError(const char* format, ...);
  */
 extern void FLogPanic(const char* format, ...);
 
-/*** 
- * @description: 
+/***
+ * @description:
  * @param {char*} format
  * @return {*}
  * @Author: near you
@@ -189,15 +189,15 @@ extern void FLogPanic(const char* format, ...);
  */
 extern void FLogAll(const char* format, ...);
 
-/*** 
- * @description: 
+/***
+ * @description:
  * @param {char*} path
  * @param {int} &length
  * @return {*}
  * @Author: near you
  * @Date: 2022-05-04 21:54:23
  */
-extern void GetCurrentLogPath(char* path, int &length);
+extern void GetCurrentLogPath(char* path, int& length);
 
 } //namespace fp end
 } //namespace log end
