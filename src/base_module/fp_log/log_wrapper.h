@@ -1,45 +1,44 @@
+/*** 
+ * @Author: nearu
+ * @Date: 2022-05-01 23:04:49
+ * @LastEditTime: 2022-05-04 22:58:56
+ * @LastEditors: near you
+ * @Description: 
+ * @FilePath: \fp_base_core\src\base_module\fp_log\log_wrapper.h
+ * @Copyright(c) 2022-present, NearU Person <zynearu@gmail.com>
+ */
 #ifndef LOG_WRAPPER_H_
 #define LOG_WRAPPER_H_
 #include "../../common/global_common_namespace_def.h"
-#include <cstdio>
-#include <string>
 #include <memory>
 #include "spdlog/spdlog.h"
-#include "spdlog/sinks/base_sink.h"
+#include "spdlog/sinks/stdout_color_sinks.h"
 #include "spdlog/sinks/rotating_file_sink.h"
+#include "spdlog/sinks/basic_file_sink.h"
 
 FP_NAMESPACE_BEGIN
-BASE_CORE_BEGIN
-
-#define FPLOG_DEBUG(...) FPLog::Instance()->Log(__FILE__, __LINE__, FPLog::Level::DEBUG, __VA_ARGS__)
-#define FPLOG_INFO(...) FPLog::Instance()->Log(__FILE__, __LINE__, FPLog::Level::INFO, __VA_ARGS__)
-#define FPLOG_WARN(...) FPLog::Instance()->Log(__FILE__, __LINE__, FPLog::Level::WRAN, __VA_ARGS__)
-#define FPLOG_ERROR(...) FPLog::Instance()->Log(__FILE__, __LINE__, FPLog::Level::ERROR, __VA_ARGS__)
-#define FPLOG_PANIC(...) FPLog::Instance()->Log(__FILE__, __LINE__, FPLog::Level::PANIC, __VA_ARGS__)
+LOG_NAMESPACE_BEGIN
 
 class FPLog {
  public:
-  enum class Level {
-    LEVEL_NONE,
-    LEVEL_DEBUG,
-    LEVEL_INFO,
-    LEVEL_WRAN,
-    LEVEL_ERROR,
-    LEVEL_PANIC,
-    LEVEL_ALL,
-  };
   static FPLog* Instance();
   static bool Destroy();
+  void Start();
+  void Stop();
+  void Close();
   void Log(const char* file_path, int line, Level level, const char* fmt, ...);
 
  private:
   FPLog();
+  ~FPLog();
   FPLog(const FPLog&) = delete;
   FPLog& operator=(const FPLog&) = delete;
   std::shared_ptr<spdlog::logger> logger_;
+  std::shared_ptr<spdlog::sinks::stdout_color_sink_mt> console_sink_;
+  std::shared_ptr<spdlog::sinks::rotating_file_sink_mt> rotating_file_sink_;
 };
 
-BASE_CORE_END
+LOG_NAMESPACE_END
 FP_NAMESPACE_END
 
 #endif //LOG_WRAPPER_H_

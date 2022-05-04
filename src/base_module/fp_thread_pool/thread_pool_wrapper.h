@@ -1,8 +1,11 @@
 /*** 
- * @Author: dongchao
- * @Date: 2022-04-28 10:53:32
- * @LastEditors: dongchao
- * @FilePath: \fp_base_core\src\base_module\fp_thread_pool\thread_pool_wrapper.h
+ * @Author: nearu
+ * @Date: 2022-05-01 23:04:49
+ * @LastEditTime: 2022-05-02 23:03:57
+ * @LastEditors: nearu
  * @Description: 
- * @Copyright (c) 2022 by ke.com, All Rights Reserved. 
+ * @FilePath: \fp_base_core\src\base_module\fp_thread_pool\thread_pool_wrapper.h
+ * @Copyright(c) 2022-present, NearU Person <zynearu@gmail.com>
  */
+
+

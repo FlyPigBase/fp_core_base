@@ -19,6 +19,8 @@ cd ${linux_dir}
 
 rm -rf CMakeFiles CMakeCache.txt cmake_install.cmake
 
+#default build all module
+
 exec_and_check "cmake ${root_dir}/ -DCMAKE_BUILD_TYPE=RelWithDebInfo"
 
 exec_and_check "make -j$(nproc)"

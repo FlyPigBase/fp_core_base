@@ -5,20 +5,26 @@
 #define DEFAULT_LOG_MAX_BUFFER (255)
 
 FP_NAMESPACE_BEGIN
-BASE_CORE_BEGIN
+LOG_NAMESPACE_BEGIN
 
 FPLog::FPLog()
   : logger_(nullptr) {
-  Log(__FILE__, __LINE__, Level::INFO, "fp log create");
+  Log(__FILE__, __LINE__, Level::LEVEL_INFO, "fp log create");
 }
 
+FPLog::~FPLog(){
+    
+}
 
 FPLog* FPLog::Instance() {
   static FPLog fp_log;
   return &fp_log;
 }
 bool FPLog::Destroy() {
-  return false;
+  if(!logger_){
+
+  }
+  return true;
 }
 
 void FPLog::Log(const char* file_path, int line, Level level, const char* fmt, ...) {
@@ -40,19 +46,19 @@ void FPLog::Log(const char* file_path, int line, Level level, const char* fmt, .
   log_msg += message;
 
   switch (level) {
-    case Level::DEBUG:
+    case Level::LEVEL_DEBUG:
       logger_->set_level(spdlog::level::debug);
       logger_->debug(log_msg.c_str());
       break;
-    case Level::INFO:
+    case Level::LEVEL_INFO:
       logger_->set_level(spdlog::level::info);
       logger_->info(log_msg.c_str());
       break;
-    case Level::ERROR:
+    case Level::LEVEL_ERROR:
       logger_->set_level(spdlog::level::err);
       logger_->error(log_msg.c_str());
       break;
-    case Level::WRAN:
+    case Level::LEVEL_WRAN:
       logger_->set_level(spdlog::level::warn);
       logger_->warn(log_msg.c_str());
       break;
@@ -62,5 +68,5 @@ void FPLog::Log(const char* file_path, int line, Level level, const char* fmt, .
 }
 
 
-BASE_CORE_END
+LOG_NAMESPACE_END
 FP_NAMESPACE_END

@@ -18,10 +18,14 @@ prepare_build(){
   target_os=$1
   case ${target_os} in
     linux)
-    show_info "start prepare build fp network for linux platform"
+    show_info "start prepare build fp basecore for linux platform"
+    ;;
+  case ${target_os} in
+    windows)
+    show_info "start prepare build fp basecore for windows platform"
     ;;
     *)
-    show_error "current not support build fp network for $target_os platform"
+    show_error "current not support build fp basecore for $target_os platform"
     exit 1
     ;;
   esac  #the used case end
