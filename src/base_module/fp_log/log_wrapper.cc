@@ -6,7 +6,6 @@
 
 FP_NAMESPACE_BEGIN
 LOG_NAMESPACE_BEGIN
-
 FPLog::FPLog()
   : logger_(nullptr) {
   Log(__FILE__, __LINE__, Level::LEVEL_INFO, "fp log create");
@@ -24,14 +23,17 @@ bool FPLog::Destroy() {
   if (!logger_) {
 
   }
+
   return true;
 }
 
 void FPLog::Log(const char* file_path, int line, Level level, const char* fmt, ...) {
   if (logger_ == NULL) {
-    logger_ = spdlog::rotating_logger_mt("FPLog", "./fp_log", DEFAULT_LOG_MAX_SIZE, DEFAULT_LOG_FILE_COUNT);
+    logger_ = spdlog::rotating_logger_mt("FPLog", "./fp_log", DEFAULT_LOG_MAX_SIZE,
+                                         DEFAULT_LOG_FILE_COUNT);
     logger_->set_pattern("%Y-%m-%d %H:%M:%S.%f <thread %t> %v");
   }
+
   std::string log_msg = file_path;
   log_msg += " ";
   log_msg += std::to_string(line);
@@ -50,18 +52,22 @@ void FPLog::Log(const char* file_path, int line, Level level, const char* fmt, .
       logger_->set_level(spdlog::level::debug);
       logger_->debug(log_msg.c_str());
       break;
+
     case Level::LEVEL_INFO:
       logger_->set_level(spdlog::level::info);
       logger_->info(log_msg.c_str());
       break;
+
     case Level::LEVEL_ERROR:
       logger_->set_level(spdlog::level::err);
       logger_->error(log_msg.c_str());
       break;
+
     case Level::LEVEL_WRAN:
       logger_->set_level(spdlog::level::warn);
       logger_->warn(log_msg.c_str());
       break;
+
     default:
       break;
   }
