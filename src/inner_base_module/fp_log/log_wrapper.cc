@@ -5,8 +5,7 @@
 #define DEFAULT_LOG_MAX_BUFFER (255)
 
 FP_NAMESPACE_BEGIN
-LOG_NAMESPACE_BEGIN
-FPLog::FPLog()
+LOG_NAMESPACE_BEGIN FPLog::FPLog()
   : logger_(nullptr) {
   Log(__FILE__, __LINE__, Level::LEVEL_INFO, "fp log create");
 }
