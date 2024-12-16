@@ -30,3 +30,5 @@
 *.exe
 *.out
 *.app
+
+thirty_party/source/spdlog
