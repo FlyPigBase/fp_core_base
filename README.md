@@ -11,6 +11,10 @@
 ## network mudule
 ## third party lib
 ### curl 7.82.0
+#### support gzip https
+- gzip depend zlib(gzip and deflate power)
+- openssl
+- libcurl
 ### libuv 1.44.1
 ### openssl 1.1.1m
 ### zlib 1.2.12
